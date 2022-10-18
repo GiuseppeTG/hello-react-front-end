@@ -4,7 +4,7 @@ import { getGreeting } from './redux/greetings/greetings';
 
 export default function Greeting() {
   const dispatch = useDispatch();
-  const greeting  = useSelector((state) => state.greeting);
+  const greeting = useSelector((state) => state.greeting);
 
   useEffect(() => {
     dispatch(getGreeting());
@@ -15,5 +15,5 @@ export default function Greeting() {
       <h1>Greeting</h1>
       <p>{greeting}</p>
     </>
-  )
+  );
 }

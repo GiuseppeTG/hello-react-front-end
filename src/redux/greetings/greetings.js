@@ -17,7 +17,6 @@ export default function greetingsReducer(state = [], action = {}) {
 
 function getGreeting() {
   return async (dispatch) => {
-    console.log('hello')
     const response = await fetch('https://safe-tundra-32740.herokuapp.com/greetings', {
       method: 'GET',
       headers: {
@@ -25,9 +24,8 @@ function getGreeting() {
       },
       mode: 'no-cors',
     });
-    console.log(response)
     const greetings = await response.json();
-    
+
     dispatch({
       type: GET_GREETINGS,
       payload: greetings,
